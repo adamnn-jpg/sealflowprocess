@@ -1,0 +1,309 @@
+/* =========================
+   GLOBAL
+========================= */
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins', Arial, sans-serif;
+  background:#f5e7b2;
+}
+
+/* BACKGROUND FOTO PABRIK */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url('ircfactory.jpg') center/cover no-repeat;
+  opacity:0.15;
+  z-index:-1;
+}
+
+/* =========================
+   FRAME
+========================= */
+.frame{
+  position:relative;
+  max-width:1200px;
+  margin:20px auto;
+  background:#fff9dc;
+  border:8px solid #e1a400;
+}
+
+/* LOGO POJOK */
+.corner-logo{
+  position:absolute;
+  top:18px;
+  right:20px;
+  width:90px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header{
+  background:#f2c94c;
+  padding:22px;
+  border-bottom:4px solid #e1a400;
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.header-text{
+  text-align:center;
+  max-width:75%;
+  margin:auto;
+}
+
+.header h1{
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+  font-size:26px;
+  font-weight:700;
+}
+
+.header h2{
+  margin:6px 0;
+  font-size:16px;
+  font-weight:600;
+}
+
+.desc{
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section{
+  max-width:1100px;
+  margin:26px auto;
+}
+
+.section h3{
+  background:#f2c94c;
+  padding:6px 16px;
+  border-radius:6px;
+  font-size:15px;
+  font-weight:600;
+  display:inline-block;
+}
+
+/* =========================
+   GRID
+========================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:20px;
+  justify-items:center;
+  margin-top:18px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card{
+  width:260px;
+  background:#fff;
+  border:3px solid #e1a400;
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.35s ease;
+}
+
+.card img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+}
+
+/* NAMA (FIX TOTAL) */
+.card span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  height:44px;
+  width:100%;
+
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.3px;
+
+  background:#fff3c4;
+  border-top:2px solid #e1a400;
+
+  color:#333;
+  transition:.25s ease;
+}
+
+/* HOVER CARD */
+.card:hover{
+  transform:translateY(-8px) scale(1.04);
+  box-shadow:0 16px 30px rgba(0,0,0,.25);
+}
+
+.card:hover img{
+  transform:scale(1.1);
+}
+
+.card:hover span{
+  color:#1e40af;
+  text-decoration:underline;
+  background:#ffefb0;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:999;
+}
+
+.modal-box{
+  position:relative;
+  background:#fff9dc;
+  max-width:560px;
+  width:90%;
+  margin:6% auto;
+  padding:22px;
+  border-radius:14px;
+  text-align:center;
+  animation:zoom .3s ease;
+}
+
+.modal-box h2{
+  font-family:'Montserrat', sans-serif;
+  font-size:20px;
+  margin-bottom:14px;
+  color:#7a5200;
+}
+
+.modal-box img{
+  width:100%;
+  max-height:320px;
+  object-fit:cover;
+  border-radius:10px;
+  border:3px solid #e1a400;
+}
+
+.modal-box p{
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.6;
+  background:#fff3c4;
+  padding:12px;
+  border-left:4px solid #e1a400;
+  border-radius:8px;
+}
+
+/* CLOSE */
+.close{
+  position:absolute;
+  top:12px;
+  right:18px;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* =========================
+   ANIMASI
+========================= */
+@keyframes zoom{
+  from{transform:scale(.85);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+/* =========================
+   FORCE CENTER TEAM SECTION
+========================= */
+
+/* SECTION */
+.team-section{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  text-align:center !important;
+}
+
+/* JUDUL "ANGGOTA KELOMPOK" */
+.team-section .section-title{
+  width:100% !important;
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+/* NAMA */
+.team-list span{
+  display:inline-block !important;
+  text-align:center !important;
+}
+/* =========================
+   OPENING SCREEN
+========================= */
+#opening{
+  position:fixed;
+  inset:0;
+  background:#f2c94c;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+  animation:fadeOut 1s ease forwards;
+  animation-delay:2.5s;
+}
+
+#opening img{
+  width:120px;
+  margin-bottom:16px;
+  animation:zoomIn 1.2s ease;
+}
+
+#opening h1{
+  font-family:'Montserrat', sans-serif;
+  font-size:26px;
+  font-weight:700;
+  color:#5a3c00;
+  margin:0;
+  animation:slideUp 1.2s ease;
+}
+
+#opening p{
+  margin-top:6px;
+  font-size:14px;
+  letter-spacing:1px;
+  color:#6b4a00;
+  animation:slideUp 1.4s ease;
+}
+
+/* ANIMASI */
+@keyframes fadeOut{
+  to{
+    opacity:0;
+    visibility:hidden;
+  }
+}
+
+@keyframes zoomIn{
+  from{transform:scale(.6);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+@keyframes slideUp{
+  from{transform:translateY(20px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
